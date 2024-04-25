@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fct_invoices
+    tests:
+      - dbt_utils.expression_is_true:
+          expression: "total_amount_usd >= 0"
+    description: This is fact table with daily balance by date by organization_id 
+    columns:
+      - name: date_created
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+      - name: total_amount_usd
+      - name: total_payment_amount_usd
+      - name: daily_balance_usd
+      - name: acc_balance_usd
+  - name: intermediate_invoices
+    description: Tables to dedup and clean raw data
+  - name: dim_organizations
+    description: organization enriched

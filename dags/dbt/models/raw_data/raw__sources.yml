@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw_data  
+    tables:
+      - name: invoices
+        tests:
+           - dbt_utils.unique_combination_of_columns:
+               combination_of_columns:
+                 - invoice_id
+                 - created_at
+        columns:
+           - name: invoice_id
+           - name: parent_invoice_id
+           - name: organization_id
+           - name: type
+           - name: status
+           - name: currency
+           - name: payment_currency
+           - name: payment_method
+           - name: amount
+           - name: payment_amount
+           - name: fx_rate
+           - name: fx_rate_payment
+           - name: created_at
+      - name: organizations
+        columns:
+           - name: organization_id
+           - name: first_payment_id
+           - name: legal_payment_date
+           - name: legal_entity_country_code
+           - name: count_total_contracts_active
+           - name: created_date
+
+
