@@ -36,7 +36,7 @@ brew install astro
 
 3. Start astro dev container
 ```bash
-brew install astro
+brew start astro
 ```
 
 4. Create an Airflow Snowflake connection: Go to localhost:8080 (user admin pass admin), then go to connections and add a new connection. In this case for snowflake and fill the following fields:
