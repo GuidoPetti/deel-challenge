@@ -1,0 +1,25 @@
+deel-challenge:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('account') }}"
+
+      # User/password auth
+      user: "{{ env_var('user') }}"
+      password: "{{ env_var('password') }}"
+
+      role: USERADMIN
+      database: DEV_DEEL
+      warehouse: COMPUTE_WH
+      schema: RAW_DATA
+      threads: 1
+      client_session_keep_alive: False
+      query_tag: 'hello'
+
+      # optional
+      connect_retries: 0 # default 0
+      connect_timeout: 10 # default: 10
+      retry_on_database_errors: False # default: false
+      retry_all: False  # default: false
+      reuse_connections: False # default: false (available v1.4+)
