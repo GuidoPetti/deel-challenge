@@ -1,7 +1,7 @@
 Overview
 ========
 
-Welcome to Deel Challenge! This repository was written with the purpose of solve Deel task home Challeng
+Welcome to Deel Challenge! This repository was written with the purpose of solving Deel task home Challenge
 
 TECH STACK
 ================
